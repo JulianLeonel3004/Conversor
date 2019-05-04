@@ -18,7 +18,6 @@ import javax.swing.JOptionPane;
  */
 public class ConversorJFrame extends javax.swing.JFrame
 {
-	private boolean aA;
 	private Conversor conversor;
 	private List<Conversor> conversores;
 	
@@ -42,7 +41,7 @@ public class ConversorJFrame extends javax.swing.JFrame
 			conversorComboBox.addItem(conv.nameA() + " / " + conv.nameB());
 		
 		conversor = conversores.get(0);
-		
+                
 		setLabels();
 	}
 	
@@ -195,7 +194,10 @@ public class ConversorJFrame extends javax.swing.JFrame
     {//GEN-HEADEREND:event_conversorComboBoxActionPerformed
         conversor = conversores.get(conversorComboBox.getSelectedIndex());
 		
-		setLabels();
+        aTextField.setText(""); //Se blanquean los textfields al momento de la selección
+        bTextField.setText("");
+	
+        setLabels();
     }//GEN-LAST:event_conversorComboBoxActionPerformed
 
     private void aBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aBButtonActionPerformed
